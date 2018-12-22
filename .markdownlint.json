@@ -1,0 +1,11 @@
+{
+  "MD013": false,
+  "MD024": false,
+  "no-inline-html": {
+    "allowed_elements": ["a"]
+  },
+  "MD031": false,
+  "MD029": {
+    "style": "one"
+  }
+}
