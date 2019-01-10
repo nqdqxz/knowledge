@@ -99,6 +99,15 @@ source /users/ctrip/.bash_profile
 source /users/ctrip/.bashrc
 ```
 
+5、spectacle
+
+作用：桌面软件位置调整
+
+6、snipaste
+
+作用：桌面截图软件  
+使用: f1开始截图、f3钉在桌面上，可以用command+s进行保存
+
 ## 四、
 
 1、端口占用
