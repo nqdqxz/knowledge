@@ -1,11 +1,38 @@
-function digitToChina(digit) {
-    var r = ''
-    var arr1 = ['', '十', '百', '千', '万', '十', '百', '千', '亿']
-    var arr2 = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九']
-    if (typeof digit !== 'number' || digit < 0) return '零'
-    var input = String(digit)
+// var next = [-1, 0, 0, 0, 0, 1, 2]
 
+function getNext(w) {
+    var next = [-1]
+    var j = 0
+    var k = -1
+    while (j < w.length - 1) {
+        if (k === -1 || w[j] === w[k]) {
+            j++
+            k++
+            next[j] = k
+        } else {
+            k = next[k]
+        }
+    }
+    return next
 }
 
-var r = digitToChina(12053005)
-console.log(r)
+function hello(s, w) {
+    var i = 0
+    var j = 0
+    var next = getNext(w)
+    console.log(next)
+    while (i < s.length && j < w.length) {
+        if (j === -1 || s[i] === w[j]) {
+            i++
+            j++
+        } else {
+            j = next[j]
+        }
+    }
+    if (j === w.length) {
+        return i - j
+    }
+    return -1
+}
+var r = hello('BBC ABCDAB ABCDABCDABDE', 'ABCDABD')
+console.log(r, r === 15)
