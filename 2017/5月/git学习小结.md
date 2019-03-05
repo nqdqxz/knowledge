@@ -80,7 +80,7 @@ git remote -v  # 显示origin远程库信息
 ```shell
 git ad * # 工作区 -> 暂存区
 git ci -m 'message' # 暂存区 -> 分支区
-git pull --rebase # 以rebase的形式合并代码，这里可能会merge失败
+git pull origin <remote-branch> --rebase # 以rebase的形式合并代码，这里可能会merge失败
 git br # 查看当前分支
 git push origin <remote-branch> # 提交到远程库
 ```
