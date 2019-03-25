@@ -14,7 +14,7 @@ pip install shadowsocks
 2、ss配置
 
 ```shell
-vim /etc/ss.json # ss配置
+vim /root/ss/ss.json # ss配置
 ```
 
 ```json
@@ -34,14 +34,14 @@ vim /etc/ss.json # ss配置
 普通模式: `vim ~/.bash_aliases`  
 
 ```shell
-alias ss="ssserver -c /etc/ss.json -d"
+alias ss="ssserver -c /root/ss/ss.json -d"
 ```
 
 fish模式: `vim ~/.config/fish/config.fish`
 
 ```shell
 function ss
-  ssserver -c /etc/ss.json -d $argv
+  ssserver -c /root/ss/ss.json -d $argv
 end
 ```
 
@@ -61,23 +61,23 @@ end
 1、安装依赖
 
 ```shell
-mkdir /root/kcptun
-cd /root/kcptun
+mkdir /root/ss
+cd /root/ss
 wget https://github.com/shadowsocks/kcptun/releases/download/v20170718/kcptun-linux-amd64-20170718.tar.gz
 tar -zxvf kcptun-linux-amd64-20170718.tar.gz
 ```
 
 2、编写脚本
 
-启动脚本：`vim /root/kcptun/start.sh`
+启动脚本：`vim /root/ss/kcpstart.sh`
 
 ```shell
-cd /root/kcptun
+cd /root/ss
 ./server_linux_amd64 -t <server-ip>:<ss-port> -l <kcp-port> -mode fast2 > /dev/null 2>&1 &
 echo 'kcptun start success'
 ```
 
-关闭脚本：`vim /root/kcptun/stop.sh`
+关闭脚本：`vim /root/ss/kcpstop.sh`
 
 ```shell
 killall server_linux_amd64
@@ -91,19 +91,19 @@ echo 'kcptun stop success'
 普通模式：`vim ~/.bash_aliases`
 
 ```js
-alias kcpstart="/root/kcptun/start.sh"
-alias kcpstop="/root/kcptun/stop.sh"
+alias kcpstart="/root/ss/start.sh"
+alias kcpstop="/root/ss/stop.sh"
 ```
 
 fish模式: `vim ~/.config/fish/config.fish`
 
 ```shell
 function kcpstart
-  sh /root/kcptun/start.sh
+  sh /root/ss/kcpstart.sh
 end
 
 function kcpstop
-  sh /root/kcptun/stop.sh
+  sh /root/ss/kcpstop.sh
 end
 ```
 
