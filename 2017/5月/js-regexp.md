@@ -19,7 +19,7 @@ var res = pattern.test('12345678901')
 
 2、`pattern.exec(str)`
 
-return: `[match, p1, p2]`, 还有index|input属性
+return: `[match, p1, p2]`, 还有index|input属性
 
 ```javascript
 var str = 'hello world'
@@ -59,7 +59,7 @@ return: 首次匹配项的索引, 否则-1
 
 2、`str.match(pattern)`
 
-pattern无g标志，return: `[match, p1, p2]`, 还有index|input属性  
+pattern无g标志，return: `[match, p1, p2]`, 还有index|input属性  
 pattern有g标志，return: `[match1, match2]`
 
 ```javascript
